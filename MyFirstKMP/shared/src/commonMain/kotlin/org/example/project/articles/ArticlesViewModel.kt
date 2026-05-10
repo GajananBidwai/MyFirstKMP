@@ -15,6 +15,7 @@ class ArticlesViewModel(): BaseViewModel() {
         getArticles()
     }
 
+
     private fun getArticles() {
         scope.launch {
             delay(1500)
@@ -27,6 +28,14 @@ class ArticlesViewModel(): BaseViewModel() {
 
             _articleState.emit(ArticlesState(articles = fetchedArticle))
 
+        }
+    }
+
+    fun observeArticlesState(onChange: (ArticlesState) -> Unit) {
+        scope.launch {
+            articleState.collect {
+                onChange(it)
+            }
         }
     }
 
