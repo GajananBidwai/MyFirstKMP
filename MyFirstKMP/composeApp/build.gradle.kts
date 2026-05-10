@@ -71,5 +71,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+    implementation(libs.androidx.navigation.compose)
 }
 
