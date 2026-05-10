@@ -52,6 +52,11 @@ android {
     }
     packaging {
         resources {
+            excludes += "META-INF/versions/9/previous-compilation-data.bin"
+        }
+    }
+    packaging {
+        resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }

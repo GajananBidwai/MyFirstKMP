@@ -18,6 +18,7 @@ koin = "3.4.3"
 navigationCompose = "2.9.8"
 ktorClient = "2.3.5"
 kotlinx-serialization = "1.6.0"
+kotlinxDatetime = "0.4.1"
 
 [libraries]
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
@@ -45,6 +46,8 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime"}
 
 
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClient" }
