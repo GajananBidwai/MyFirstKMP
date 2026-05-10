@@ -25,13 +25,19 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
+
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
         }
 
         androidMain.dependencies {
             implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
+            implementation(libs.ktor.client.android)
         }
 
         iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
 
         }
 
