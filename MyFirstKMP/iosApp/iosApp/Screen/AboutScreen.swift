@@ -14,9 +14,14 @@ struct AboutScreen: View {
             ListView()
                 .navigationTitle("About Device")
                 .toolbar {
-                    Button("Done") {
+                    Button {
                         dismiss()
+                    } label: {
+                        Text("Done")
+                            .bold()
                     }
+
+                    
                 }
         }
     }
