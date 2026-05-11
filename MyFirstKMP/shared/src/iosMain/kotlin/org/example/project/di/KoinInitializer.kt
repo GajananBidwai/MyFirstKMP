@@ -1,0 +1,20 @@
+package org.example.project.di
+
+import org.example.project.articles.ArticlesViewModel
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
+import org.koin.core.context.startKoin
+
+fun initKoin() {
+    val module = sharedKoinModules
+
+    startKoin {
+        modules(module)
+    }
+
+
+}
+
+class ArticlesInjector: KoinComponent {
+    val articlesViewModel: ArticlesViewModel by inject()
+}
