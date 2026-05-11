@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
 
         val articleViewModel: ArticlesViewModel by viewModels()
         setContent {
-            ApplicationScaffold(articlesViewModel = articleViewModel)
+            ApplicationScaffold()
 
         }
     }

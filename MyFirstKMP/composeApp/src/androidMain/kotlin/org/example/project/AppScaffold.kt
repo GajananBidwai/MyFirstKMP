@@ -18,7 +18,7 @@ import androidx.navigation.compose.composable
 
 
 @Composable
-fun ApplicationScaffold(articlesViewModel: ArticlesViewModel) {
+fun ApplicationScaffold() {
     var navController = rememberNavController()
 
     Scaffold {
@@ -27,7 +27,6 @@ fun ApplicationScaffold(articlesViewModel: ArticlesViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(it),
-            articlesViewModel
         )
     }
 
@@ -36,8 +35,7 @@ fun ApplicationScaffold(articlesViewModel: ArticlesViewModel) {
 @Composable
 fun AppNavHost(
     navController: NavHostController,
-    modifier: Modifier = Modifier,
-    articlesViewModel: ArticlesViewModel
+    modifier: Modifier = Modifier
 ) {
     NavHost(
         navController = navController,
@@ -47,7 +45,6 @@ fun AppNavHost(
         composable(Screen.ARTICLES.route) {
             ArticlesScreen(
                 onAboutButtonClick = { navController.navigate(Screen.ABOUT_DEVICE.route) },
-                articlesViewModel = articlesViewModel
             )
         }
 
