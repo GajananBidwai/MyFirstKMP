@@ -33,6 +33,8 @@ import coil.compose.AsyncImage
 import org.example.project.articles.Article
 import org.example.project.articles.ArticlesViewModel
 import androidx.compose.ui.layout.ContentScale
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.SwipeRefreshState
 import org.koin.androidx.compose.getViewModel
 
 
@@ -45,12 +47,11 @@ fun ArticlesScreen(
 
     Column {
         AppBar(onAboutButtonClick)
-        if (articlesState.value.isLoading)
-            Loader()
+
         if (articlesState.value.error != null)
             ErrorMessage(articlesState.value.error!!)
         if (articlesState.value.articles.isNotEmpty())
-            ArticlesListView(articlesViewModel.articleState.value.articles)
+            ArticlesListView(articlesViewModel)
     }
 }
 
@@ -73,10 +74,18 @@ private fun AppBar(
 }
 
 @Composable
-fun ArticlesListView(articles: List<Article>) {
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(articles) { article ->
-            ArticleItemView(article = article)
+fun ArticlesListView(viewModel: ArticlesViewModel) {
+
+
+
+    SwipeRefresh(
+        state = SwipeRefreshState(viewModel.articleState.collectAsState().value.isLoading),
+        { viewModel.getArticles(true)}
+    ) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(viewModel.articleState.value.articles) { article ->
+                ArticleItemView(article = article)
+            }
         }
     }
 }
@@ -106,20 +115,6 @@ fun ArticleItemView(article: Article) {
             modifier = Modifier.align(Alignment.End)
         )
         Spacer(modifier = Modifier.height(4.dp))
-    }
-}
-
-@Composable
-fun Loader() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        CircularProgressIndicator(
-            modifier = Modifier.width(64.dp),
-            color = MaterialTheme.colorScheme.surfaceVariant,
-            trackColor = MaterialTheme.colorScheme.secondary,
-        )
     }
 }
 

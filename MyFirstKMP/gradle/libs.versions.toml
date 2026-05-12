@@ -20,8 +20,11 @@ ktorClient = "2.3.5"
 kotlinx-serialization = "1.6.0"
 kotlinxDatetime = "0.4.1"
 sqlDelight = "2.1.0"
+accompanistSwiperefresh = "0.24.13-rc"
 
 [libraries]
+accompanist-swiperefresh = {module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanistSwiperefresh"}
+
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
