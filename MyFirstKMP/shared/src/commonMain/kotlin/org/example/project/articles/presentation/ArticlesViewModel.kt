@@ -1,20 +1,20 @@
-package org.example.project.articles
+package org.example.project.articles.presentation
 
-import io.ktor.client.HttpClient
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.serialization.kotlinx.json.json
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.Json
 import org.example.project.BaseViewModel
+import org.example.project.articles.application.ArticlesUseCase
 
 class ArticlesViewModel(
     private var useCase: ArticlesUseCase
 ): BaseViewModel() {
 
-    private val _articleState: MutableStateFlow<ArticlesState> = MutableStateFlow(ArticlesState(isLoading = true))
+    private val _articleState: MutableStateFlow<ArticlesState> = MutableStateFlow(
+        ArticlesState(
+            isLoading = true
+        )
+    )
     val articleState: StateFlow<ArticlesState> get() = _articleState
 
 
@@ -26,7 +26,12 @@ class ArticlesViewModel(
     fun getArticles(forceFetch: Boolean = false) {
         scope.launch {
 
-            _articleState.emit(ArticlesState(isLoading = true, articles = _articleState.value.articles))
+            _articleState.emit(
+                ArticlesState(
+                    isLoading = true,
+                    articles = _articleState.value.articles
+                )
+            )
 
             var fetchedArticle = useCase.getArticles(forceFetch)
 

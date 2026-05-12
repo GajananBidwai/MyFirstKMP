@@ -1,10 +1,10 @@
 package org.example.project.articles.di
 
-import org.example.project.articles.ArticleDataSource
-import org.example.project.articles.ArticleRepository
-import org.example.project.articles.ArticleService
-import org.example.project.articles.ArticlesUseCase
-import org.example.project.articles.ArticlesViewModel
+import org.example.project.articles.data.ArticleDataSource
+import org.example.project.articles.data.ArticleRepository
+import org.example.project.articles.data.ArticleService
+import org.example.project.articles.application.ArticlesUseCase
+import org.example.project.articles.presentation.ArticlesViewModel
 import org.koin.dsl.module
 
 var articleModule = module {

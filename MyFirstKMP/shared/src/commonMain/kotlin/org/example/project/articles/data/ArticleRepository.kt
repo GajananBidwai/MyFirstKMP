@@ -1,4 +1,6 @@
-package org.example.project.articles
+package org.example.project.articles.data
+
+import org.example.project.articles.data.ArticlesRow
 
 class ArticleRepository(
     private val dataSource: ArticleDataSource,

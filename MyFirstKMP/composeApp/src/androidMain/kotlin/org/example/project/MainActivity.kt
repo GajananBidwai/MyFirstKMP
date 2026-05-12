@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat.enableEdgeToEdge
 import org.example.project.screens.AboutScreen
-import org.example.project.articles.ArticlesViewModel
+import org.example.project.articles.presentation.ArticlesViewModel
 import org.example.project.screens.ArticlesScreen
 
 class MainActivity : ComponentActivity() {

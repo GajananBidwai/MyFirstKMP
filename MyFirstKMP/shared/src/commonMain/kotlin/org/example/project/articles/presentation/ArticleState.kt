@@ -1,4 +1,6 @@
-package org.example.project.articles
+package org.example.project.articles.presentation
+
+import org.example.project.articles.application.Article
 
 class ArticlesState (
     val articles: List<Article> = listOf(),

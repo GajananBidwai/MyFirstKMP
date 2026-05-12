@@ -1,4 +1,4 @@
-package org.example.project.articles
+package org.example.project.articles.application
 
 data class Article(
     val title: String,

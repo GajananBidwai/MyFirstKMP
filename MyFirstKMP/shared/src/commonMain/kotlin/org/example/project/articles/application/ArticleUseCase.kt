@@ -1,4 +1,4 @@
-package org.example.project.articles
+package org.example.project.articles.application
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -6,6 +6,8 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
+import org.example.project.articles.data.ArticleRepository
+import org.example.project.articles.data.ArticlesRow
 import kotlin.math.abs
 
 class ArticlesUseCase(private val repo: ArticleRepository) {

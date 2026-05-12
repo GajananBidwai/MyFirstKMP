@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import org.example.project.articles.ArticlesViewModel
+import org.example.project.articles.presentation.ArticlesViewModel
 import androidx.navigation.compose.NavHost
-import org.example.project.articles.Article
+import org.example.project.articles.application.Article
 import org.example.project.screens.AboutScreen
 import org.example.project.screens.ArticlesScreen
 import org.example.project.screens.Screen

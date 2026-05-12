@@ -1,5 +1,6 @@
-package org.example.project.articles
+package org.example.project.articles.data
 
+import org.example.project.articles.data.ArticlesRow
 import org.example.project.db.MyFirstKMPDatabase
 
 class ArticleDataSource(private var database: MyFirstKMPDatabase) {
@@ -32,7 +33,8 @@ class ArticleDataSource(private var database: MyFirstKMPDatabase) {
         desc: String?,
         date: String,
         url: String?
-    ) : ArticlesRow = ArticlesRow(title = title,
+    ) : ArticlesRow = ArticlesRow(
+        title = title,
         desc = desc,
         date = date,
         imageUrl = url
