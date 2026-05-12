@@ -5,6 +5,8 @@ struct ContentView: View {
     @State private var showOpenAbout = false
     
     var body: some View {
+        let articleScreen = ArticlesScreen(viewModel: .init())
+        
         VStack {
             NavigationStack {
                 ArticlesScreen(viewModel: .init())
@@ -20,6 +22,9 @@ struct ContentView: View {
                             }
                         }
                     }
+            }
+            .refreshable {
+                articleScreen.viewModel.articleViewModel.getArticles(forceFetch: true)
             }
         }
         
