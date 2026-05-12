@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.sqlDelight)
 
 }
 
@@ -34,15 +35,18 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
+            implementation(libs.sql.coroutines.extensions)
         }
 
         androidMain.dependencies {
             implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
             implementation(libs.ktor.client.android)
+            implementation(libs.sql.android.driver)
         }
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.sql.native.driver)
 
         }
 
@@ -61,5 +65,13 @@ android {
     }
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
+    }
+}
+
+sqldelight {
+    databases {
+        create("MyFirstKMPDatabase") {
+            packageName.set("org.example.project.db")
+        }
     }
 }

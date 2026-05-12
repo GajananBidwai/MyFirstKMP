@@ -1,6 +1,7 @@
 package org.example.project
 
 import android.app.Application
+import org.example.project.di.databaseModule
 import org.example.project.di.sharedKoinModules
 import org.example.project.di.viewModelsModule
 import org.koin.android.ext.koin.androidContext
@@ -14,7 +15,7 @@ class MyFirstKMPApp: Application() {
     }
 
     private fun initKoin() {
-        val modules = sharedKoinModules + viewModelsModule
+        val modules = sharedKoinModules + viewModelsModule + databaseModule
 
         startKoin {
             androidContext(this@MyFirstKMPApp)
