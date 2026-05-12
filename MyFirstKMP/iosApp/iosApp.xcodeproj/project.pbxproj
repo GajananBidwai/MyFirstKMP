@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		92A02C9C2FB30A5100B0F0DD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A02C9B2FB30A5100B0F0DD /* libsqlite3.tbd */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		92A02C9B2FB30A5100B0F0DD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A20A72C2DB2E4D0D69C8B3AD /* MyFirstKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,12 +46,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A02C9C2FB30A5100B0F0DD /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92A02C9A2FB30A5100B0F0DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92A02C9B2FB30A5100B0F0DD /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD5EDD725E2D6DD6A4B2009A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +74,7 @@
 			children = (
 				6B22378F8B333D8762492A36 /* Configuration */,
 				F37D1EA331F85919D7996DBB /* iosApp */,
+				92A02C9A2FB30A5100B0F0DD /* Frameworks */,
 				AD5EDD725E2D6DD6A4B2009A /* Products */,
 			);
 			sourceTree = "<group>";
